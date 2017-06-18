@@ -8,9 +8,8 @@ class MockupElement extends HTMLElement {
   connectedCallback() {
     console.log('helou, I\'m connected');
     this.shadow.appendChild(document.querySelector('template').content.cloneNode(true));
-    this.shadow.querySelector('img').attributes.src.value = this.attributes.image.value;
+    this.shadow.querySelector('img').src = this.attributes.image.value;
   }
-
 
 }
 
