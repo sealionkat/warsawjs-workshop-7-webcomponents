@@ -28,6 +28,7 @@ class GithubProfileCard extends HTMLElement {
         $shadow.querySelector('#avatar').src = profile.avatar_url;
         $shadow.querySelector('#name').innerHTML = profile.name;
         $shadow.querySelector('#bio').innerHTML = profile.bio;
+        $shadow.querySelector('#location').innerHTML = profile.location;
       })
       .catch(error => {
         console.error(error);
@@ -46,9 +47,9 @@ class GithubProfileCard extends HTMLElement {
         repos.sort((a, b) => {
           return b.stargazers_count - a.stargazers_count;
         });
-        repos = repos.slice(0, 6);
+        repos = repos.slice(0, 9);
         const rr = repos.reduce((acc, item) => {
-          acc.push(`<li>${item.stargazers_count} ${item.name}</li>`);
+          acc.push(`<li><div class="stars">${item.stargazers_count}</div> <div class="repo-name">${item.name}</div></li>`);
           return acc;
         }, []);
 

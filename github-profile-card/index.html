@@ -1,7 +1,66 @@
 <template>
-  <img id="avatar" src="" alt="" />
-  <div id="name"></div>
-  <div id="bio"></div>
+  <style>
+    img {
+      max-width: 150px;
+      max-height: 150px;
+    }
+
+    #details {
+      display: inline-block;
+      padding-left: 15px;
+    }
+
+    #profile {
+      display: flex;
+      flex-direction: row;
+
+    }
+
+
+    #name {
+
+    }
+
+    #bio {
+      font-style: italic;
+    }
+
+    #location {
+      margin-top: 10px;
+    }
+
+    #repos {
+    }
+
+    #repos li {
+      display: inline-block;
+      padding: 2px 5px;
+      width: 175px;
+      vertical-align: middle;
+    }
+
+    #repos li .stars {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    #repos li .repo-name {
+      display: inline-block;
+      text-decoration: underline;
+      font-weight: bold;
+      width: 85%;
+
+    }
+  </style>
+
+  <div id="profile">
+    <img id="avatar" src="" alt=""/>
+    <div id="details">
+      <h1 id="name"></h1>
+      <div id="bio"></div>
+      <div id="location"></div>
+    </div>
+  </div>
   <ul id="repos"></ul>
 </template>
 
