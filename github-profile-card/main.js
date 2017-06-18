@@ -6,8 +6,58 @@ class GithubProfileCard extends HTMLElement {
 
   connectedCallback() {
     let currentDocument = document.currentScript.ownerDocument;
+    const login = this.attributes.login.value;
 
     this.shadow.appendChild(currentDocument.querySelector('template').content.cloneNode(true));
+    this.fetchProfileData(login);
+    this.fetchRepositoriesData(login)
+  }
+
+  fetchProfileData(login) {
+    //const userURL = `https://api.github.com/users/${login}`;
+    const userURL = 'mocks/profile.json';
+    console.log('fetching profile', userURL);
+
+    fetch(userURL, {method: 'GET'})
+      .then(response => {
+        return response.json();
+      })
+      .then(profile => {
+        let $shadow = this.shadow;
+
+        $shadow.querySelector('#avatar').src = profile.avatar_url;
+        $shadow.querySelector('#name').innerHTML = profile.name;
+        $shadow.querySelector('#bio').innerHTML = profile.bio;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
+  fetchRepositoriesData(login) {
+    const reposURL = 'mocks/repos.json';
+    console.log('fetching repos', reposURL);
+
+    fetch(reposURL, {method: 'GET'})
+      .then(response => {
+        return response.json();
+      })
+      .then(repos => {
+        repos.sort((a, b) => {
+          return b.stargazers_count - a.stargazers_count;
+        });
+        repos = repos.slice(0, 6);
+        const rr = repos.reduce((acc, item) => {
+          acc.push(`<li>${item.stargazers_count} ${item.name}</li>`);
+          return acc;
+        }, []);
+
+        this.shadow.querySelector('#repos').innerHTML = rr.join(' ');
+
+      })
+      .catch(error => {
+        console.error(error);
+      })
   }
 }
 
