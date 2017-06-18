@@ -49,7 +49,7 @@ class GithubProfileCard extends HTMLElement {
         });
         repos = repos.slice(0, 9);
         const rr = repos.reduce((acc, item) => {
-          acc.push(`<li><div class="stars">${item.stargazers_count}</div> <div class="repo-name">${item.name}</div></li>`);
+          acc.push(`<li><span class="stars">${item.stargazers_count}</span> <span class="repo-name">${item.name}</span></li>`);
           return acc;
         }, []);
 
