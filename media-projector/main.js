@@ -12,7 +12,7 @@ class MediaProjector extends HTMLElement {
     this.shadow.appendChild(currentDocument.querySelector('template').content.cloneNode(true));
     let slidesContainer = this.shadow.querySelector('#slide');
 
-    this.slider = new Slider({slides: this.children, container: slidesContainer});
+    //this.slider = new Slider({slides: this.children, container: slidesContainer});
   }
 }
 

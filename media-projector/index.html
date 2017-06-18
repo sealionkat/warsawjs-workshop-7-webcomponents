@@ -2,7 +2,7 @@
   <style>
     :host {
       display: block;
-      width: 650px;
+      width: 800px;
       font-family: Arial, sans-serif;
     }
 
@@ -22,19 +22,38 @@
       width: 600px;
       height: 350px;
       margin: 0 auto;
+      overflow: hidden;
     }
 
     #play-button {
-      width: 150px;
-      height: 150px;
+      width: 600px;
+      height: 350px;
       margin: 0 auto;
+      background-color: black;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    #play-button span:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+
+    #play-button span {
+      display: inline-block;
+      color: white;
+      font-size: 150px;
     }
   </style>
 
   <div id="projector">
     <h1>Media Projector</h1>
     <div id="slide">
-      <div id="play-button"></div>
+      <div id="play-button">
+        <span>&#9654;</span>
+      </div>
     </div>
   </div>
 </template>
