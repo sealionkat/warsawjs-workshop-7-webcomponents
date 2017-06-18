@@ -3,8 +3,10 @@ class MockupElement extends HTMLElement {
     super();
     console.log('My awesome MockupElement');
     this.shadow = this.attachShadow({mode: 'open'});
-    console.log(this.shadow);
+  }
 
+  connectedCallback() {
+    console.log('helou, I\'m connected');
     this.shadow.innerHTML = document.querySelector('template').innerHTML;
   }
 }
