@@ -1,21 +1,21 @@
 <html>
 <head>
   <title>Custom Elements </title>
-  <meta charset="utf8" />
+  <meta charset="utf8"/>
 </head>
 <body>
 
-<script>
-  class SomethingAwesome extends HTMLElement {
-    constructor() {
-      super();
+  <script>
+    class SomethingAwesome extends HTMLElement {
+      constructor() {
+        super();
 
-      console.log('It\'s awesome!')
+        console.log('It\'s awesome!');
+      }
     }
-  }
 
-  window.customElements.define('something-awesome', SomethingAwesome);
-</script>
+    window.customElements.define('something-awesome', SomethingAwesome);
+  </script>
 
   <something-awesome></something-awesome>
 </body>
