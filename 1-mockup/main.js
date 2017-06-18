@@ -7,13 +7,14 @@ class MockupElement extends HTMLElement {
 
   connectedCallback() {
     console.log('helou, I\'m connected');
-    let currentDocument = document.currentScript.ownerDocument;
 
-    this.shadow.appendChild(currentDocument.querySelector('template').content.cloneNode(true));
+    this.shadow.appendChild(MockupElement.DOCUMENT.querySelector('template').content.cloneNode(true));
     this.shadow.querySelector('img').src = this.attributes.image.value;
     this.shadow.querySelector('h1').innerHTML = this.attributes.text.value;
   }
 
 }
+
+MockupElement.DOCUMENT = document.currentScript.ownerDocument;
 
 window.customElements.define('mockup-element', MockupElement);

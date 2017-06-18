@@ -1,0 +1,43 @@
+<template>
+  <style>
+    :host {
+      display: block;
+      width: 650px;
+      font-family: Arial, sans-serif;
+    }
+
+    div#projector {;
+      background-color: #2ab0ed;
+      border-radius: 5px;
+      padding-top: 10px;
+      padding-bottom: 15px;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+    #slide {
+      width: 600px;
+      height: 350px;
+      margin: 0 auto;
+    }
+
+    #play-button {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+    }
+  </style>
+
+  <div id="projector">
+    <h1>Media Projector</h1>
+    <div id="slide">
+      <div id="play-button"></div>
+    </div>
+  </div>
+</template>
+
+<script src="slider.js"></script>
+<script src="main.js"></script>

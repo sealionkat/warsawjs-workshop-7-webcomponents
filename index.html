@@ -3,9 +3,9 @@
   <title>WarsawJS Workshop - WebComponents</title>
   <meta charset="utf8" />
   <link rel="import" href="1-mockup/index.html" />
-  <link rel="stylesheet" href="1-mockup/main.css" />
   <link rel="import" href="github-profile-card" />
-  <link rel="stylesheet" href="github-profile-card/main.css" />
+  <link rel="import" href="media-projector" />
+  <link rel="stylesheet" href="media-projector/main.css" />
 </head>
 <body>
 
@@ -13,6 +13,12 @@
 
   <mockup-element image="http://placeskull.com/300/200" text="Another one awesome skull"></mockup-element>-->
 
-  <github-profile-card login="sealionkat"></github-profile-card>
+  <!--<github-profile-card login="sealionkat"></github-profile-card>-->
+
+  <media-projector>
+    <github-profile-card login="sealionkat"></github-profile-card>
+    <img src="https://unsplash.it/600/200/?image=1024" alt=""/>
+    <mockup-element image="http://placeskull.com/600/200" text="Awesome skull"></mockup-element>
+  </media-projector>
 </body>
 </html>
