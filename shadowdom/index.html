@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Shadow DOM example</title>
+  <meta charset="utf8" />
+</head>
+<body>
+  <img src="http://placeskull.com/50/50" />
+
+  <h1>Shadow DOM</h1>
+
+  <script>
+    let $h1 = document.querySelector('h1');
+    let shadow = $h1.attachShadow({mode: 'open'});
+    console.log(shadow);
+  </script>
+</body>
+</html>
